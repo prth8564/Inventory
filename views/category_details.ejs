@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= name %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= name %></h1>
+    <p>Welcome to <%= name %></p>
+
+    <% if(category_detail.length){ %>
+      <ul>
+        <li>
+          <a href="<%= category_detail[0].url %>"><%= category_detail[0].name %></a>
+          <small>( <%= category_detail[0].description %> )</small>
+        </li>
+        <li>
+            <% if(item_list.length){ %>
+                <ul>
+                  <% item_list.forEach(item => { %>
+                  <li>
+                    <a href="<%= item.url %>"><%= item.name %></a>
+                    <small>( <%= item.category.name %> )</small>
+                  </li>
+                  <% }) %>
+                </ul>
+                <% } else { %>
+                <p>There are no books.</p>
+                <% } %>
+        </li>
+      </ul>
+      <% } else { %>
+      <p>There are no books.</p>
+      <% } %>
+  </body>
+</html>
