@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const mongoose = require('mongoose');
 mongoose.set('strictQuery',false);
-const mongoDB = "mongodb+srv://preetham10107:XANpCZNNbqzNPsmX@cluster0.jdhtetb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const mongoDB = "";
 
 async function main(){
   await mongoose.connect(mongoDB);
